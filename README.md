@@ -24,6 +24,12 @@ This script can be used in 2 ways:
 
 ## How it works?
 
+#### What does this script different from the others?
+
+Most of the script found uses for loop to spam clicks or keyboard events, which eats up a lot of resources. This script has **optimized the performance** to run check every 1 seconds, and hooks into Popcat's Vue instances to alter counter status only after "Pops" have been sent to server.
+
+This script also embeds "Metadata Block", which allows the script to be installed via Tampermonkey. Once the script is installed, you don't need to copy and paste every time, and the bot will automatically run when [https://popcat.click](https://popcat.click) page is load.
+
 #### Why is it 799 "Pops" every 30 seconds? Can I adjust the script to send more "Pops"?
 
 It is not recommended to send "Pops" more then 799 every 30 seconds due to Popcat's logic.
@@ -31,6 +37,8 @@ It is not recommended to send "Pops" more then 799 every 30 seconds due to Popca
 Popcats sends accumlated clicks to it's server every 30 second. On every request being sent, it checks whether the accumlated clicks is `>= 800`, if it is `true`, then it will increase the value of a variable called `sequential_max_pops` by 1. When `sequential_max_pops` reaches 11, it will mark variable `bot` as true, and all clicks afterwards will not be send to server, which also means no contribution to the leaderboard.
 
 Also, for accumlated clicks more than 800, the value will clamped to 800 before sending to server. So the maximum contribution to leaderboard per 30 seconds will be 800 only.
+
+Note that the cool down time for the server API is 30 seconds. If a same IP address tries to send multiple requests within 30 seconds, the server will returns `429 - Too many requests`. It is recommend to make sure there is no other browser tabs running [https://popcat.click](https://popcat.click) when using this bot.
 
 Here is the source code of Popcat as of 15 August, 2021.
 ![Popcat source code](docs/images/bot-logic.png)
