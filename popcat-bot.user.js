@@ -7,9 +7,9 @@
 // @match        https://popcat.click/
 // @icon         https://www.google.com/s2/favicons?domain=popcat.click
 // @grant        none
-// @updateURL    https://github.com/icelam/popcat-bot/raw/master/tampermonkey.js
+// @updateURL    https://raw.githubusercontent.com/icelam/popcat-bot/master/popcat-bot.user.js
 
-// @downloadURL  https://raw.githubusercontent.com/icelam/popcat-bot/master/tampermonkey.js
+// @downloadURL  https://raw.githubusercontent.com/icelam/popcat-bot/master/popcat-bot.user.js
 // @supportURL   https://github.com/icelam/popcat-bot/issues
 // ==/UserScript==
 
